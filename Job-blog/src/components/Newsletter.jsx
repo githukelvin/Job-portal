@@ -26,12 +26,12 @@ const Newsletter = () => {
             <FaRocket/>
             Get Noticed faster
             </h3>
-            <p className="text-primary/75 text-base mb-5">Join our newsletter and get the latest job listings and career insights delivered straight to your inbox</p>
+            <p className="text-primary/75 text-base mb-5">The resume upload feature on this job website is fantastic! It's user-friendly and allows you to get noticed faster by potential employers. Highly recommended for anyone looking to streamline their job search process! </p>
             {/* subscription button */}
             <div>
                 <form className="w-full space-y-4">
                    
-                    <input type="submit" value={"Upload your CV"} className="w-full block py-2 pl-3 border focus:outline-none bg-blue rounded-sm text-white cursor-pointer font-semibold hover:bg-pink"/>
+                    <input type="submit" value={"Upload your Resume"} className="w-full block py-2 pl-3 border focus:outline-none bg-blue rounded-sm text-white cursor-pointer font-semibold hover:bg-pink"/>
                 </form>
             </div>
             
