@@ -1,8 +1,9 @@
-import React from 'react'
+import {useState} from 'react'
 import { useForm } from "react-hook-form"
 import CreatableSelect from "react-select/creatable"
 
 const Createjob = () => {
+  const [selectedOption, setSelectedOption]  = useState(null);
     const {
         register,
         handleSubmit,
@@ -11,19 +12,23 @@ const Createjob = () => {
       } = useForm()
     
       const onSubmit = (data) =>{ 
+        data.skills = selectedOption
         console.log(data)
       };
 
       const options = [
-        {value: "JavaScript", lable: "JavaScript"},
-        {value: "React", lable: "React"},
-        {value: "CSS", lable: "CSS"},
-        {value: "HTML", lable: "HTML"},
-        {value: "Python", lable: "Python"},
-        {value: "C++", lable: "C++"},
-        {value: "PHP", lable: "PHP"},
-        {value: "Database", lable: "Database"},
-        {value: "C", lable: "C"},
+        {value: "JavaScript", label: "JavaScript"},
+        {value: "React", label: "React"},
+        {value: "CSS", label: "CSS"},
+        {value: "HTML", label: "HTML"},
+        {value: "Python", label: "Python"},
+        {value: "C++", label: "C++"},
+        {value: "PHP", label: "PHP"},
+        {value: "Django", label: "Django"},
+        {value: "C", label: "C"},
+        {value: "Mongo DB", label: "Mongo DB"},
+        {value: "Node", label: "Node"},
+        {value: "Redux", label: "Redux"},
       ]
     
       // console.log(watch("example")) 
@@ -122,7 +127,7 @@ const Createjob = () => {
           <label className="block mb-2 text-lg">
                Required Skills Sets
               </label>
-              <CreatableSelect defaultValue={} className=" create-job-input"/>
+              <CreatableSelect defaultValue={selectedOption} onChange={setSelectedOption} options={options} isMulti className=" create-job-input py-4"/>
           </div>
 
           <input type="submit" className=" block mt-12 bg-blue text-white hover:bg-pink font-semibold px-8 py-2 rounded-sm cursor-pointer" />
