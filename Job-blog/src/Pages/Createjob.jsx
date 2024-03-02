@@ -1,5 +1,6 @@
 import React from 'react'
 import { useForm } from "react-hook-form"
+import CreatableSelect from "react-select/creatable"
 
 const Createjob = () => {
     const {
@@ -12,6 +13,18 @@ const Createjob = () => {
       const onSubmit = (data) =>{ 
         console.log(data)
       };
+
+      const options = [
+        {value: "JavaScript", lable: "JavaScript"},
+        {value: "React", lable: "React"},
+        {value: "CSS", lable: "CSS"},
+        {value: "HTML", lable: "HTML"},
+        {value: "Python", lable: "Python"},
+        {value: "C++", lable: "C++"},
+        {value: "PHP", lable: "PHP"},
+        {value: "Database", lable: "Database"},
+        {value: "C", lable: "C"},
+      ]
     
       // console.log(watch("example")) 
   return (
@@ -101,6 +114,15 @@ const Createjob = () => {
             {/* company name */}
             
 
+          </div>
+
+          {/* 5th row */}
+          <div>
+
+          <label className="block mb-2 text-lg">
+               Required Skills Sets
+              </label>
+              <CreatableSelect defaultValue={} className=" create-job-input"/>
           </div>
 
           <input type="submit" className=" block mt-12 bg-blue text-white hover:bg-pink font-semibold px-8 py-2 rounded-sm cursor-pointer" />
