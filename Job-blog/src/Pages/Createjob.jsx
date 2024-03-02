@@ -19,6 +19,7 @@ const Createjob = () => {
         {/* form */}
         <div className="bg-[#FAFAFA] py-10 px-4 lg:px-16">
         <form onSubmit={handleSubmit(onSubmit)}>
+          {/* 1st row */}
           <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
             <div className="lg:w-1/2 w-full">
               <label className="block mb-2 text-lg">
@@ -32,6 +33,24 @@ const Createjob = () => {
                 Company Name
               </label>
                <input type="text" placeholder="Ex: Microsoft" {...register("companyName")}  className="block w-full flex-1 border-1 bg-white py-1.5 pl-3 text-gray-900 placeholder:text-gray-400 focus:outline-none sm:text-sm sm:leading-6"/>
+            </div>
+
+          </div>
+          {/* 2nd row */}
+
+          <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
+            <div className="lg:w-1/2 w-full">
+              <label className="block mb-2 text-lg">
+                Minimum Salary
+              </label>
+               <input type="text" placeholder="$20k" {...register("minPrice")}  className="block w-full flex-1 border-1 bg-white py-1.5 pl-3 text-gray-900 placeholder:text-gray-400 focus:outline-none sm:text-sm sm:leading-6"/>
+            </div>
+            {/* company name */}
+            <div className="lg:w-1/2 w-full">
+              <label className="block mb-2 text-lg">
+                Maximum Salary
+              </label>
+               <input type="text" placeholder="$200k" {...register("maxPrice")}  className="block w-full flex-1 border-1 bg-white py-1.5 pl-3 text-gray-900 placeholder:text-gray-400 focus:outline-none sm:text-sm sm:leading-6"/>
             </div>
 
           </div>
