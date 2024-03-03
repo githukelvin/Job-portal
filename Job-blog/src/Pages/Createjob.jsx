@@ -1,3 +1,4 @@
+
 import {useState} from 'react'
 import { useForm } from "react-hook-form"
 import CreatableSelect from "react-select/creatable"
@@ -161,6 +162,14 @@ const Createjob = () => {
               Job Description
             </label>
             <textarea {...register("description")} className="w-full pl-3 py-1.5 focus:outline-none"  rows={6} placeholder="Enter your job description here..."></textarea>
+
+          </div>
+
+          {/* last row */}
+          <div className="w-full">
+            <label className="block mb-2 text-lg">Job Posted By</label>
+            <input type="email" placeholder="name@gmail.com" {...register("postedBy")}  className="create-job-input"/>
+
 
           </div>
 
