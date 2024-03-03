@@ -133,24 +133,24 @@ const Createjob = () => {
           {/* 6th row */}
           <div className="create-job-flex">
 
-<div className="lg:w-1/2 w-full">
-    <label className="block mb-2 text-lg">
-      Company Logo
-    </label>
-     <input type="url" placeholder="Paste your company logo url:https://wetransfer.com/img1" {...register("companyLogo")}  className="create-job-input"/>
-  </div>
-  <div className="lg:w-1/2 w-full">
-    <label className="block mb-2 text-lg">
-      Employment Type
-    </label>
-    <select {...register("employmentType")} className="create-job-input">
-<option value="">Choose your Employment type</option>
-<option value="Full-time">Full-time</option>
-<option value="Part-time">Part-time</option>
-<option value="Temporary">Temporary</option>
-</select>
-  </div>
-  {/* company name */}
+          <div className="lg:w-1/2 w-full">
+              <label className="block mb-2 text-lg">
+                Company Logo
+              </label>
+              <input type="url" placeholder="Paste your company logo url:https://wetransfer.com/img1" {...register("companyLogo")}  className="create-job-input"/>
+            </div>
+            <div className="lg:w-1/2 w-full">
+              <label className="block mb-2 text-lg">
+                Employment Type
+              </label>
+              <select {...register("employmentType")} className="create-job-input">
+                    <option value="">Choose your Employment type</option>
+                    <option value="Full-time">Full-time</option>
+                    <option value="Part-time">Part-time</option>
+                    <option value="Temporary">Temporary</option>
+              </select>
+          </div>
+
   
 
 </div>
