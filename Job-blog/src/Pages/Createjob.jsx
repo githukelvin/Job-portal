@@ -149,12 +149,20 @@ const Createjob = () => {
                     <option value="Part-time">Part-time</option>
                     <option value="Temporary">Temporary</option>
               </select>
-          </div>
+            </div>
 
   
 
-</div>
+          </div>
 
+          {/* 7th row */}
+          <div className="w-full">
+            <label className="block mb-2 text-lg">
+              Job Description
+            </label>
+            <textarea {...register("description")} className="w-full pl-3 py-1.5 focus:outline-none"  rows={6} placeholder="Enter your job description here..."></textarea>
+
+          </div>
 
           <input type="submit" className=" block mt-12 bg-blue text-white hover:bg-pink font-semibold px-8 py-2 rounded-sm cursor-pointer" />
          </form>
