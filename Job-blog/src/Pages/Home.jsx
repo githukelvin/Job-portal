@@ -78,16 +78,6 @@ const Home = () => {
           );
       }
       
-      // Filter by selected category
-      // if (selected) {
-      //     filteredJobs = filteredJobs.filter(job =>
-      //         (job.jobLocation && job.jobLocation.toLowerCase() === selected.toLowerCase()) ||
-      //         (job.maxPrice && parseInt(job.maxPrice) === parseInt(selected)) ||
-      //         (job.salaryType && job.salaryType.toLowerCase() === selected.toLowerCase()) ||
-      //         (job.employmentType && job.employmentType.toLowerCase() === selected.toLowerCase())
-      //     );
-      // }
-  
 
 //posting date review
 
