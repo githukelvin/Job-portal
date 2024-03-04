@@ -36,35 +36,28 @@ async function run() {
 
     //create  db
     const db = client.db("myJobBlog");
-    const jobsCollections = db.collection("realJobs");
+    const jobsCollections = db.collection("demoJobs");
 
-    //get all jobs
-    app.get("/all-jobs", async (req, res) => {
-      const jobs = await jobsCollections.find().toArray();
-      res.send(jobs);  
-  })
+
   //post a job
-  app.post("/post-job", async (req, res) => {
-    const body = req.body;
-    body.createAt = new Date();
-    console.log(body)
-    // const result = await jobsCollections.insertOne(job);
-    // res.send(result);
-  })
-  //get a job
-  app.get("/get-job/:id", async (req, res) => {
-    const id = req.params.id;
-    const job = await jobsCollections.findOne({_id: id});
-    res.send(job);
-  })
-  //update a job
-  app.put("/update-job/:id", async (req, res) => {
-    const id = req.params.id;
-    const job = req.body;
-    const result = await jobsCollections.updateOne({_id: id}, job);
-    res.send(result);
-  })
-  //delete a job
+  // Assuming you're using Express.js
+app.post('/post-job', async (req, res) => {
+  const job = req.body; // Assuming job data is sent in the request body
+  try {
+      const result = await jobsCollections.insertOne(job);
+      res.status(201).json({ message: 'Job created successfully', data: result });
+  } catch (error) {
+      res.status(500).json({ message: 'Failed to create job', error: error.message });
+  }
+});
+
+
+   //get all jobs
+   app.get("/all-jobs", async (req, res) => {
+    const jobs = await jobsCollections.find().toArray();
+    res.send(jobs);  
+})
+
 
     // Send a ping to confirm a successful connection
     await client.db("admin").command({ ping: 1 });
