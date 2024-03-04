@@ -31,7 +31,7 @@ const Home = () => {
   };
   // console.log(query)
 //filter jobs by title
-    const filteredItems=jobs.filter((jobs) => jobs.jobTitle.toLowerCase().indexOf(query.toLowerCase()) !== -1)
+    const filteredItems=jobs.filter((jobs) => jobs.jobTitle.toLowerCase().indexOf(query.toLowerCase()) !== -1);
     // console.log(filteredItems)
 
     //Radio based button  filtering
