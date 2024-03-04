@@ -6,12 +6,38 @@ const MyJobs = () => {
     const [searchText, setSearchText] = useState("");
     const [isLoading, setIsLoading] = useState(true);
 
+
+    //set currentpage
+    const [currentPage, setCurrentPage] = useState(1);
+    const itemsPerPage = 4;
+
     useEffect(() => {
         setIsLoading(true);
         fetch(`http://localhost:5000/myJobs/wangecichristine39@gmail.com`).then(res => res.json()).then(data => {
             setJobs(data);
+            setIsLoading(false);
         });
-    }, []);
+    }, [searchText]);
+
+    //pagination
+    const indexOfLastItem = currentPage * itemsPerPage;
+    const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+    const currentJobs = jobs.slice(indexOfFirstItem, indexOfLastItem)
+
+    //next and previous button
+    const nextPage = () => {
+        if(indexOfLastItem < jobs.length){
+            setCurrentPage(currentPage + 1)
+        }
+    }
+
+    //previous page
+
+    const prevPage = () => {
+        if(currentPage > 1){
+            setCurrentPage(currentPage - 1)
+        }
+    }
 
     const handleSearch = () => {
         const filter = jobs.filter(job => job.jobTitle.toLowerCase().indexOf(searchText.toLowerCase()) !== -1);
@@ -80,6 +106,7 @@ const MyJobs = () => {
                                     </tr>
                                 </thead>
 
+                               
                                 <tbody>
                                     {jobs.map((job, index) => (
                                         <tr key={index}>
@@ -111,17 +138,7 @@ const MyJobs = () => {
                         </div>
                     </div>
                 </div>
-                <footer className="relative pt-8 pb-6 mt-16">
-                    <div className="container mx-auto px-4">
-                        <div className="flex flex-wrap items-center md:justify-between justify-center">
-                            <div className="w-full md:w-6/12 px-4 mx-auto text-center">
-                                <div className="text-sm text-blueGray-500 font-semibold py-1">
-                                    Made with <a href="https://www.creative-tim.com/product/notus-js" className="text-blueGray-500 hover:text-gray-800" target="_blank" rel="noopener noreferrer">Notus JS</a> by <a href="https://www.creative-tim.com" className="text-blueGray-500 hover:text-blueGray-800" target="_blank" rel="noopener noreferrer"> Creative Tim</a>.
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </footer>
+
             </section>
         </div>
     );
