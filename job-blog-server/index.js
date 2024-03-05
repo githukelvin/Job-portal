@@ -54,6 +54,8 @@ app.post('/post-job', async (req, res) => {
 
    //get all jobs
    app.get("/all-jobs", async (req, res) => {
+    // No need to convert it to an array it to an array 
+    // const jobs = await db.demoJobs.find()
     const jobs = await jobsCollections.find().toArray();
     res.send(jobs);  
 })
