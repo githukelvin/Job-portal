@@ -16,7 +16,7 @@ const Createjob = () => {
         data.skills = selectedOption;
         fetch("http://localhost:5000/post-job", {
             method: "POST",
-            headers: { "Content-Type": "application/json" },
+            headers: { "content-type": "application/json" },
             body: JSON.stringify(data)
         })
         .then(res => res.json())
