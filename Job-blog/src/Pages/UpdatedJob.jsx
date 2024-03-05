@@ -1,14 +1,19 @@
+import React, {useState} from 'react'
+import { useParams, useLoaderData } from 'react-router-dom'
+import {useForm} from "react-hook-form"
+import CreatableSelect from 'react-select/creatable';
 
-import {useState} from 'react'
-import { useForm } from "react-hook-form"
-import CreatableSelect from "react-select/creatable"
 
-const Createjob = () => {
-  const [selectedOption, setSelectedOption]  = useState(null);
+const UpdatedJob = () => {
+    const {id} = useParams();
+    // console.log(id)
+    const {_id, companyLogo, jobTitle, companyName, minPrice, maxPrice, salaryType, jobLocation,
+         postingDate, experienceLevel, employmentType, description, postedBy,skills} = useLoaderData()
+
+         const [selectedOption, setSelectedOption]  = useState(null);
     const {
         register,
         handleSubmit, reset,
-        // watch,
         formState: { errors },
       } = useForm()
     
@@ -47,8 +52,6 @@ const Createjob = () => {
         {value: "Node", label: "Node"},
         {value: "Redux", label: "Redux"},
       ]
-    
-      // console.log(watch("example")) 
   return (
     <div className="max-w-screen-2xl  container mx-auto xl:px-24 px-4">
         {/* form */}
@@ -196,4 +199,4 @@ const Createjob = () => {
   )
 }
 
-export default Createjob
+export default UpdatedJob
