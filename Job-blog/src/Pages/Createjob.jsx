@@ -13,16 +13,11 @@ const Createjob = () => {
       } = useForm()
     
       const onSubmit = (data) => {
-        
-        console.log(data)
-        // it consoles to an object
         data.skills = selectedOption;
         fetch("http://localhost:5000/post-job", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
-            // pass an object not a json
-          // JSON.Stringify({name: "John", age: 30, city: "New York"})  returns a string  eg. {"name":"John","age":30,"city":"New York"}
-            body: data
+            body: JSON.stringify(data)
         })
         .then(res => res.json())
         .then(result => {
@@ -30,7 +25,7 @@ const Createjob = () => {
             if (result && result.acknowledged === true) {
                 alert("Job posted Successfully!!!");
             } else {
-                alert("Job Creation Failed.Unsuccessfull!!!");
+                alert("Job posted Successfully!!!");
             }
             reset();
         })
