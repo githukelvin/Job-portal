@@ -108,7 +108,7 @@ const MyJobs = () => {
 
                                
                                 <tbody>
-                                    {jobs.map((job, index) => (
+                                    {currentJobs.map((job, index) => (
                                         <tr key={index}>
                                             <th className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left text-blueGray-700">
                                                 {index + 1}
@@ -140,15 +140,15 @@ const MyJobs = () => {
                 </div>
 
                 {/* pagination */}
-                <div className="flex justify-center text-black space-x-8">
+                <div className="flex justify-center text-black space-x-8 mb-8">
                     {
                         currentPage > 1 && (
-                            <button className="hover:underline">Previous</button>
+                            <button className="hover:underline" onClick={prevPage}>Previous</button>
                         )
                     }
                     {
                         indexOfLastItem < jobs.length && (
-                            <button className="hover:underline">Next</button>
+                            <button onClick={nextPage} className="hover:underline">Next</button>
                         )
                     }
 
