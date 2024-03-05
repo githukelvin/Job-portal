@@ -25,7 +25,7 @@ const Createjob = () => {
             if (result && result.acknowledged === true) {
                 alert("Job posted Successfully!!!");
             } else {
-                alert("Job posted Successfully!!!");
+                alert("Job Creation Failed.Unsuccessfull!!!");
             }
             reset();
         })
