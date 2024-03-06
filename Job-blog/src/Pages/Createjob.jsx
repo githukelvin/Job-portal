@@ -16,7 +16,7 @@ const Createjob = () => {
         data.skills = selectedOption;
         fetch("http://localhost:5000/post-job", {
             method: "POST",
-            headers: { "content-type": "application/json" },
+            headers: { "Content-Type": "application/json" },
             body: JSON.stringify(data)
         })
         .then(res => res.json())
@@ -154,7 +154,7 @@ const Createjob = () => {
               <label className="block mb-2 text-lg">
                 Company Logo
               </label>
-              <input type="url" placeholder="Paste your company logo url:https://wetransfer.com/img1" {...register("companyLogo")}  className="create-job-input"/>
+              <input type="url" placeholder="Paste your company logo url:https://weshare.com/img1" {...register("companyLogo")}  className="create-job-input"/>
             </div>
             <div className="lg:w-1/2 w-full">
               <label className="block mb-2 text-lg">
