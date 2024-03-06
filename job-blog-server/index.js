@@ -40,6 +40,22 @@ async function run() {
 
 
   //post a job
+  // app.post('/post-job', async (req, res) => {
+  //   const body = req.body;
+  //   body.CreateAt = new Date();
+  //   // console.log(body)
+  //    const result = await jobsCollections.insertOne(body);
+  //    if(result.insertedId){
+  //     return res.status(200).send(result);
+  //    }else{
+  //     return res.status(404).send({
+  //       message: "Failed to create job",
+  //       status: false
+  //     })
+  //    }
+  // })
+
+
   // Assuming you're using Express.js
 app.post('/post-job', async (req, res) => {
   const job = req.body; // Assuming job data is sent in the request body
@@ -56,7 +72,7 @@ app.post('/post-job', async (req, res) => {
    app.get("/all-jobs", async (req, res) => {
     // No need to convert it to an array it to an array 
     // const jobs = await db.demoJobs.find()
-    const jobs = await jobsCollections.find().toArray();
+    const jobs = await jobsCollections.find({}).toArray();
     res.send(jobs);  
 })
 
