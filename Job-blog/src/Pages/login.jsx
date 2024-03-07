@@ -21,8 +21,8 @@ const Login = () => {
     }
 
     return (
-        <div className="container">
-            <div className="grid mx-auto bg-[#234eac] place-items-center">
+        <div className=" grid h-dvh place-content-center ">
+            <div className="grid mx-auto bg-[#234eac] p-[3em] rounded-2xl place-items-center">
                 <form className="col-md-4 mt-3 pt-3 pb-3">
                     {"" !== notice &&
                         <div className="alert alert-warning" role="alert">
@@ -38,10 +38,10 @@ const Login = () => {
                         <label htmlFor="exampleInputPassword1" className="form-label">Password</label>
                     </div>
                     <div className="d-grid">
-                        <button type="submit" className="btn btn-primary text-3xl cursor-pointer bg-[#fff] rounded-full px-3 py-3" onClick={(e) => loginWithUsernameAndPassword(e)}>Submit</button>
+                        <button type="submit" className="btn btn-primary text-xl cursor-pointer bg-[#fff] rounded-full px-3 py-3" onClick={(e) => loginWithUsernameAndPassword(e)}>Submit</button>
                     </div>
                     <div className="mt-3 text-center">
-                        <span>Need to sign up for an account? <Link to="./signup">Click here.</Link></span>
+                        <span>Need to sign up for an account? <Link to="/signup">Click here.</Link></span>
                     </div>
                 </form>
             </div>
